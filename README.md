@@ -161,12 +161,29 @@ Odpowiedź tkwi w semantyce -- zdefiniowanym z góry znaczeniu, które nasz jęz
 
 ## Semantyka
 
+Semantyka to zasady, które określają znaczenie poszczególnych elementów składniowych.
 
+Semantyka określa wartość, kroki i sposób jej obliczania dla każdego elementu składniowego.
 
-<!-- żeby zrozumieć proces interpretacji, a mianowicie jak to się dzieje że statyczne drzewo składni ożywa i staje się działającym programem, kluczowe jest zrozumienie pojęcia, które nazywam tu *kontekstem* (w anglojęzycznej literaturze mówi się na to *environment*, czyli środowisko). -->
+Dzięki niej możliwy jest proces interpretacji, który niejako "ożywia" statyczne drzewo składni, które staje się działającym programem.
 
+Żeby to zrozumieć, kluczowe jest pojęcie, które nazywam tu *kontekstem* (w anglojęzycznej literaturze mówi się na to *environment*, czyli *środowisko*).
 
-<!-- Czy i kiedy poszczególne operacje są wykonywane zależy od tego, czy mamy do czynienia z funkcją zdefiniowaną przez użytkownika czy też konstrukcją wbudowaną. -->
+### Konteksty
+
+Kontekst jest elementem niejawnym, niewidocznym w kodzie źródłowym programu. Bez pojęcia kontekstu jednak interpretacja nie byłaby możliwa.
+
+Kontekst bowiem zawiera wartości wszystkich zmiennych i operacji dostępnych w danym momencie działania programu.
+
+Kontekst można sprowadzić do prostego słownika (i tak jest Szczebiocie zaimplementowany), czyli kolekcji klucz-wartość. Kluczami w kontekście są właśnie nazwy dostępnych zmiennych i operacji.
+
+W każdym momencie działania programu dostępny jest *jakiś* kontekst.
+
+Konteksty są tworzone i niszczone przez wywołania funkcji lub bloków kodu.
+
+Każdy nowy kontekst posiada kontekst-rodzica, z jednym wyjątkiem, którym jest specjalny kontekst początkowy.
+
+Kontekst początkowy zawiera definicje wszystkich operacji i zmiennych wbudowanych w język -- dzięki niemu możliwe jest zainicjowanie procesu interpretacji.
 
 ### Programy, bloki, i funkcje
 
