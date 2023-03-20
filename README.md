@@ -1,6 +1,6 @@
 # Jak stworzyć swój własny język programowania?
 
-To repozytorium zawiera zabawkowy język programowania "Szczebiot" stworzony w celach edukacyjnych.
+To repozytorium zawiera zabawkowy język programowania "Szczebiot" stworzony w celach edukacyjnych, w ramach [prezentacji z cyklu IT po mojemu](prezentacja.pdf).
 
 ## Uwaga
 
@@ -186,6 +186,8 @@ Każdy nowy kontekst posiada kontekst-rodzica, z jednym wyjątkiem, którym jest
 
 Kontekst początkowy zawiera definicje wszystkich operacji i zmiennych wbudowanych w język -- dzięki niemu możliwe jest zainicjowanie procesu interpretacji.
 
+<!-- todo: łańcuch kontekstów -->
+
 ### Programy, bloki, i funkcje
 
 Jeśli program/funkcja/blok nie zawiera pętli nieskończonej, jego/jej wartością jest wartość ostatniego wywołania.
@@ -267,7 +269,7 @@ Gałęzie opisane jako `komentarz` służą do zamieszczania czytelnych dla ludz
 
 Przyjmuje jeden argument i zwraca jego wartość.
 
-Przykład:
+Przykłady:
 
 ```
 [a]
@@ -317,7 +319,7 @@ Przykład:
 zdefiniuj [[osiem] pomnóż [[2][4]]]
 ```
 
-Powtórne zdefiniowanie tej samej nazwy spowoduje błąd.
+Próba powtórnego zdefiniowania już istniejącej nazwy w danym kontekście spowoduje błąd.
 
 ### zmień!
 
@@ -468,11 +470,11 @@ rosnące? [[5][10][15]]     komentarz [-> prawda]
 równe? [[5][10][15]]       komentarz [-> fałsz]
 ```
 
-## Możliwość dalszego rozszerzenia
+## Możliwość dalszego rozszerzania
 
 Możemy dalej rozszerzać nasz język -- dzięki temu, że jest interpretowany w JavaScripcie, bardzo łatwo "udostępniać" w Szczebiocie dowolne funkcjonalności JavaScriptu, implementując je jako kolejne wbudowane operacje.
 
-Nasze wbudowane operacje mogą też rozszerzać możliwości JavaScriptu, np. podstawowe funkcje arytmetyczne w Szczebiocie są wariadyczne (przyjmują dowolną liczbę argumentów), w przeciwieństwie do JavaScriptu, gdzie operatory artymetyczne, za pomocą których nasze wbudowane funkcje implementujemy, zawsze przyjmują dwa argumenty.
+Nasze wbudowane operacje mogą też rozszerzać możliwości JavaScriptu, np. podobnie jak podstawowe funkcje arytmetyczne w Szczebiocie, które są wariadyczne (przyjmują dowolną liczbę argumentów), w przeciwieństwie do JavaScriptu, gdzie operatory artymetyczne (za pomocą których nasze wbudowane funkcje zostały zaimplementowane) zawsze przyjmują dwa argumenty.
 
 <!-- Możemy również wymyślać oryginalne konstrukcje składniowe, -->
 
