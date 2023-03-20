@@ -154,8 +154,9 @@ W składni Szczebiotu istnieją tylko dwa symbole, które nadają programom drze
 
 Skoro składnia jest jednolita, to skąd bierze się różnica w interpretacji elementów wbudowanych i zdefiniowancyh przez użytkownika? 
 
-Odpowiedź tkwi w semantyce -- zdefiniowanym z góry znaczeniu, które nasz język nadaje rozmaitym elementom składniowym. W Szczebiocie te elementy są identyfikowane przez nazwy (a nie znaki interpunkcyjne, etc.).
+Odpowiedź tkwi w semantyce -- określonym z góry znaczeniu, które nasz język nadaje rozmaitym elementom składniowym. 
 
+<!-- W Szczebiocie te elementy są identyfikowane przez nazwy (a nie znaki interpunkcyjne, etc.). -->
 
 <!-- todo: o niekoniecznych elementach językowych komplikujących (czasem bezpowrotnie) inne języki, zaletach i wadach; złotym środku minimalizmu; ekstrema: APL? Perl? PHP? C? Lisp? BLC -->
 
@@ -175,7 +176,7 @@ Kontekst jest elementem niejawnym, niewidocznym w kodzie źródłowym programu. 
 
 Kontekst bowiem zawiera wartości wszystkich zmiennych i operacji dostępnych w danym momencie działania programu.
 
-Kontekst można sprowadzić do prostego słownika (i tak jest Szczebiocie zaimplementowany), czyli kolekcji klucz-wartość. Kluczami w kontekście są właśnie nazwy dostępnych zmiennych i operacji.
+Kontekst można sprowadzić do prostego słownika (i tak jest w Szczebiocie zaimplementowany), czyli kolekcji klucz-wartość. Kluczami w kontekście są właśnie nazwy dostępnych zmiennych i operacji.
 
 W każdym momencie działania programu dostępny jest *jakiś* kontekst.
 
@@ -233,7 +234,7 @@ Zwrócona zostanie wartość ostatniego wywołania.
 
 Z punktu widzenia składniowego, lista argumentów wygląda identycznie jak ciało programu/funkcji/bloku -- jest ciągiem wywołań.
 
-Jednak semantyka jest inna.
+Jednak semantyka jest tu inna.
 
 Mianowicie, poczas interpretacji listy argumentów, wszystkie wartości po kolei są przyporządkowywane do nazw parametrów i przekazywane do kontekstu wywoływanej operacji.
 
@@ -302,6 +303,8 @@ Wartości odpowiadające `true` i `false` w JavaScripcie. Zwracane przez operato
 
 ### zdefiniuj
 
+Służy to wprowadzenia nowej pary nazwa-wartość do aktualnego kontekstu.
+
 Schemat:
 
 ```
@@ -314,7 +317,11 @@ Przykład:
 zdefiniuj [[osiem] pomnóż [[2][4]]]
 ```
 
+Powtórne zdefiniowanie tej samej nazwy spowoduje błąd.
+
 ### zmień!
+
+Służy to zmiany wartości przyporądkowanej do danej nazwy w pierwszym kontekście, który taką nazwę zawiera.
 
 Schemat:
 
@@ -329,7 +336,11 @@ zdefiniuj [[a] [5]]
 zmień! [[a] [10]]
 ```
 
+Zmiana wartości dla nazwy, której nie zawiera żaden z widocznych kontekstów spowoduje błąd.
+
 ### funkcja
+
+Tworzy nową funkcję i wiąże ją z aktualnym kontekstem (zwanym kontekstem definicji funkcji). Dzięki temu z ciała funkcji można odwoływać się do zmiennych i operacji, które są w tym kontekście dostępne (a więc Szczebiot posiada tzw. [zasięg](https://pl.wikipedia.org/wiki/Zasi%C4%99g_(programowanie)) leksykalny).
 
 Schemat:
 
@@ -353,7 +364,7 @@ zdefiniuj [[dodaj 4] funkcja [[x]
 
 ### blok
 
-Konstrukcja służąca do grupowania wywołań. 
+Konstrukcja służąca do grupowania kilku wywołań. Wprowadza nowy kontekst, co pozwala na definiowanie zmiennych widocznych tylko w tym bloku. 
 
 Schemat:
 
@@ -423,6 +434,8 @@ warunkowo [
 
 ### arytmetyka: dodaj, odejmij, pomnóż, podziel
 
+Podstawowe operacje arytmetyczne.
+
 Schemat:
 
 ```
@@ -438,6 +451,8 @@ podziel [[100][2][5][2]]
 ```
 
 ### porównania: malejące?, rosnące?, równe?
+
+Podstawowe operacje porównania.
 
 Schemat:
 
