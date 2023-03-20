@@ -269,7 +269,31 @@ Przyjmuje jeden argument i zwraca jego wartość.
 Przykład:
 
 ```
+[a]
+```
+
+Zwraca wartość zmiennej `a`.
+
+```
+[5]
+```
+
+Zwraca wartość liczbową `5`.
+
+```
 ['hello world]
+```
+
+Zwraca ciąg znaków `hello world`. 
+
+Uwaga: w Szczebiocie ciągi znaków wyglądają podobnie do nazw zmiennych, z tym że są poprzedzone znakiem `'` (apostrof). Można również taki znak umieścić na końcu ciągu. Białe znaki wokół apostrofów nie wliczają się do ciągu, a więc poniższe przykłady są równoważne poprzedniemu:
+
+```
+['hello world']
+
+[  'hello world   ]
+
+[  'hello world'  ]
 ```
 
 ### prawda i fałsz
