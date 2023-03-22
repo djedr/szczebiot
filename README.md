@@ -423,7 +423,7 @@ warunkowo [
     szczebiocz ['a wynosi 0']
     [b]
   ]
-  równe [[a][1]] blok [
+  równe? [[a][1]] blok [
     szczebiocz ['a wynosi 1']
     pomnóż [[b][2]]
   ]
