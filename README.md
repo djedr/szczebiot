@@ -323,7 +323,7 @@ Próba powtórnego zdefiniowania już istniejącej nazwy w danym kontekście spo
 
 ### zmień!
 
-Służy to zmiany wartości przyporądkowanej do danej nazwy w pierwszym kontekście, który taką nazwę zawiera.
+Służy to zmiany wartości przyporządkowanej do danej nazwy w pierwszym kontekście, który taką nazwę zawiera.
 
 Schemat:
 
